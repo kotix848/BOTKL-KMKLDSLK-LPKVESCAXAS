@@ -3,7 +3,7 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import discord
-from discord.ext import commands
+from discord.ext  commands
 from time import sleep
 from datetime import datetime
 from colorama import Fore, Back, Style
@@ -111,7 +111,7 @@ async def kick(ctx):
 async def cc(ctx, amount=100):
 	await ctx.channel.purge(limit=int(amount))
 	emb = discord.Embed( colour=discord.Color.green())
-	emb.add_field(name='Успешно', value = 'Отчищенно')
+	embadd_field(name='Успешно', value = 'Отчищенно')
 	await ctx.send(embed=emb)
 	sleep(1)
 	await ctx.channel.purge(limit=1)
@@ -120,7 +120,7 @@ async def cc(ctx, amount=100):
 # command
 # bad_words
 @client.event
-async def on_message(message):
+async def on_message (message):
     await client.process_commands(message)
 
     msg = message.content.lower()
@@ -159,5 +159,9 @@ async def help( ctx ):
 # connect
 # token = 'NzI4OTg4NDYxOTg5NzU2OTk4.XwDPeg.p5M7kEnCnUfOJIrLBL-Nn3lcdR0'
 
+token = os.environ.get('BOT_TOKEN')
+
+
+bot.run(str(token))
 
 
