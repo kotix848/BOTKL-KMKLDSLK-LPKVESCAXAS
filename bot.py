@@ -162,6 +162,6 @@ async def help( ctx ):
 token = os.environ.get('BOT_TOKEN')
 
 
-bot.run(str(token))
+client.run(str(token))
 
 
